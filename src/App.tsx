@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 import './App.css'
-import { Header } from '@components'
+import { Header, Profile } from '@components'
 
 function App() {
   useLayoutEffect(() => {
@@ -13,7 +13,12 @@ function App() {
     }
   }, [])
 
-  return <Header />
+  return (
+    <>
+      <Header />
+      <Profile />
+    </>
+  )
 }
 
 export default App
