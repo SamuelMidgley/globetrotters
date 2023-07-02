@@ -3,11 +3,13 @@ import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar/avata
 import { Card, CardHeader, CardContent, CardFooter } from '@components/ui/card/card'
 import { ClockIcon, MessageSquare, Share2Icon, ThumbsUpIcon } from 'lucide-react'
 import { formatDistance } from 'date-fns'
-import { IPostCard } from '.'
+import { IPostCard } from '..'
 import { Button } from '@components/ui'
 import { Separator } from '@components/ui/separator'
 import { Badge } from '@components/ui/badge'
 import { PostCardMore } from './PostCardMore'
+import { useState } from 'react'
+import { Comments } from './Comments'
 
 export const PostCard = ({
   profile,
@@ -20,6 +22,7 @@ export const PostCard = ({
   numComments,
 }: IPostCard) => {
   const timeAgo = formatDistance(datePosted, new Date(), { addSuffix: true })
+  const [showComments, setShowComments] = useState(false)
 
   return (
     <Card className="w-[500px] mb-5">
@@ -57,7 +60,7 @@ export const PostCard = ({
             <Badge>{numLikes}</Badge>
           </Button>
           <Separator orientation="vertical" className="h-8" />
-          <Button variant="ghost">
+          <Button variant="ghost" onClick={() => setShowComments((prev) => !prev)}>
             <MessageSquare className="w-4 h-4 mr-2" />
             <p className="font-light mr-2">Comment</p>
             <Badge>{numComments}</Badge>
@@ -68,6 +71,7 @@ export const PostCard = ({
             <p className="font-light mr-2">Share</p>
           </Button>
         </div>
+        {showComments && <Comments />}
       </CardFooter>
     </Card>
   )

@@ -1,8 +1,8 @@
-import { PostCard } from './PostCard'
+import { PostCard } from './post-card/PostCard'
 import { subDays } from 'date-fns'
 import { Timeline } from './Timeline'
 
-interface IProfile {
+export interface IProfile {
   imageUrl: string
   imageAlt: string
   fallback: string
