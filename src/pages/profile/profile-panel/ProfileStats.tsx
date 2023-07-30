@@ -4,7 +4,7 @@ import { Stats } from './Stats'
 
 export const ProfileStats = () => {
   return (
-    <Card className="w-full">
+    <Card className="w-64 lg:w-full">
       <CardContent className="pt-6">
         <div className="flex justify-between mx-2">
           <Stats count="324" label="Folllowing" />

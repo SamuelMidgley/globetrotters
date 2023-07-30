@@ -9,17 +9,19 @@ export const ProfileInfo = () => {
 
   return (
     <article className="relative p-5 pt-12">
-      <div className="flex w-full absolute top-[-2.5rem]">
+      <div className="flex absolute top-[-2.5rem]">
         <Avatar className="h-20 w-20 border-2">
           <AvatarImage src={profile.imageUrl} alt={profile.imageAlt} />
           <AvatarFallback>{profile.initials}</AvatarFallback>
         </Avatar>
       </div>
-      <div>
-        <p className="text-lg font-semibold">{profile.firstName + ' ' + profile.lastName}</p>
-        <p className="text-sm text-purple-600 font-bold relative top-[-5px]">{profile.handle}</p>
-        <p className="text-xs mt-2 mb-4">{profile.bio}</p>
-        {profile.profileId !== currentProfileId && <InteractButtons isFollowing={profile.isFollowing} />}
+      <div className="sm:flex lg:block gap-2">
+        <div className="flex-1">
+          <p className="text-lg font-semibold">{profile.firstName + ' ' + profile.lastName}</p>
+          <p className="text-sm text-purple-600 font-bold relative top-[-5px]">{profile.handle}</p>
+          <p className="text-xs mt-2 mb-4">{profile.bio}</p>
+          {profile.profileId !== currentProfileId && <InteractButtons isFollowing={profile.isFollowing} />}
+        </div>
         <ProfileStats />
       </div>
     </article>

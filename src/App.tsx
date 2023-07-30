@@ -1,10 +1,8 @@
 import { useLayoutEffect } from 'react'
 import './App.css'
-import { Header } from '@components'
-import { Profile } from './pages/profile'
-import { EditProfile } from './pages/edit-profile'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home } from './pages/home'
+import { Header } from '@components'
+import { Home, Profile, EditProfile, Chat } from './pages'
 
 function App() {
   useLayoutEffect(() => {
@@ -33,6 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/profile/edit/:id" element={<EditProfile />} />
+        <Route path="/chat/:id" element={<Chat />} />
       </Routes>
     </BrowserRouter>
   )

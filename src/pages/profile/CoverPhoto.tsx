@@ -1,5 +1,7 @@
 import { UserCog2Icon } from 'lucide-react'
-import { Button } from '@components/ui'
+import { buttonVariants } from '@components/ui'
+import { Link } from 'react-router-dom'
+import { cn } from '@lib/utils'
 
 export const CoverPhoto = () => {
   // Use React Context
@@ -13,10 +15,13 @@ export const CoverPhoto = () => {
         className="object-cover h-full w-full rounded-b-md"
       />
       {isUser && (
-        <Button className="absolute bottom-2 right-2 text-xs" variant="outline">
+        <Link
+          to={`/profile/edit/2`}
+          className={cn('absolute bottom-2 right-2 text-xs', buttonVariants({ variant: 'outline' }))}
+        >
           <UserCog2Icon className="w-4 mr-1" />
           Edit profile
-        </Button>
+        </Link>
       )}
     </div>
   )

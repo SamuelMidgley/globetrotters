@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <header className="flex p-2 sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-14 items-center">
-        <div className="mr-4 hidden md:flex">
+        <div className="mr-4 md:flex">
           <HeaderTitle />
           {/* <HeaderNav /> */}
         </div>

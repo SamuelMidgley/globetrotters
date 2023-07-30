@@ -1,4 +1,4 @@
-import { CreditCard, LogOut, PlusCircle, Settings, User } from 'lucide-react'
+import { LogOut, Settings, User } from 'lucide-react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar/avatar'
 import { Button } from '@components/ui/button/button'
@@ -12,8 +12,11 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@components/ui/dropdown-menu/dropdown-menu'
+import { Link } from 'react-router-dom'
 
 export function UserNav() {
+  const id = 23
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -28,29 +31,24 @@ export function UserNav() {
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">Sam Midgley</p>
-            <p className="text-xs leading-none text-muted-foreground">midgley.sam@email.com</p>
+            <p className="text-xs leading-none text-muted-foreground">@smidge</p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <User className="mr-2 h-4 w-4" />
-            <span>Profile</span>
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+          <DropdownMenuItem asChild>
+            <Link to={`/profile/${id}`}>
+              <User className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCard className="mr-2 h-4 w-4" />
-            <span>Billing</span>
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Settings className="mr-2 h-4 w-4" />
-            <span>Settings</span>
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <PlusCircle className="mr-2 h-4 w-4" />
-            <span>New Team</span>
+          <DropdownMenuItem asChild>
+            <Link to={`/profile/edit/${id}`}>
+              <Settings className="mr-2 h-4 w-4" />
+              <span>Settings</span>
+              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
