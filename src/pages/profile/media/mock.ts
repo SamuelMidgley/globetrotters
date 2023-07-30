@@ -1,18 +1,6 @@
-import { MediaCard } from './MediaCard'
+import { IMediaCard } from '.'
 
-interface IMediaInfo {
-  likeCount: number
-  commentCount: number
-}
-
-export interface IMediaCard {
-  label: string
-  imageUrl: string
-  alt: string
-  info: IMediaInfo
-}
-
-const data: IMediaCard[] = [
+export const mock_media: IMediaCard[] = [
   {
     label: 'Snowy mountain',
     imageUrl:
@@ -44,13 +32,3 @@ const data: IMediaCard[] = [
     },
   },
 ]
-
-export const Media = () => {
-  return (
-    <div className="mt-2 flex gap-4 flex-wrap">
-      {data.map((d, i) => (
-        <MediaCard key={i} {...d} />
-      ))}
-    </div>
-  )
-}

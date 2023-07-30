@@ -12,11 +12,11 @@ export const Comment = ({ profile, message, showSeparator }: CommentProps) => {
       <div className="flex gap-4 items-center">
         <Avatar className="h-8 w-8 border-2">
           <AvatarImage src={profile.imageUrl} alt={profile.imageAlt} />
-          <AvatarFallback>{profile.fallback}</AvatarFallback>
+          <AvatarFallback>{profile.initials}</AvatarFallback>
         </Avatar>
         <div>
           <p className="text-sm">
-            <b className="text-sm">{profile.name}: </b>
+            <b className="text-sm">{profile.firstName + ' ' + profile.lastName}: </b>
             {message}
           </p>
         </div>

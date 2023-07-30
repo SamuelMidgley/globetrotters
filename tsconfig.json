@@ -24,8 +24,10 @@
     "paths": {
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
       "@components": ["components/index"],
-      "@lib/*": ["lib/*"]
+      "@lib/*": ["lib/*"],
+      "@types": ["types/index"]
     }
   },
   "include": ["src"],

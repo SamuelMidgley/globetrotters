@@ -1,14 +1,20 @@
 import { Separator } from '@components/ui/separator'
-import { IProfile } from '..'
+import { IProfile } from '@types'
 import { CommentInput } from './CommentInput'
 import { Comment } from './Comment'
 
 const profile: IProfile = {
+  profileId: 1,
+  firstName: 'Sam',
+  lastName: 'Midgley',
+  initials: 'SM',
   imageUrl: 'https://github.com/shadcn.png',
-  imageAlt: '',
-  fallback: 'SM',
-  name: 'Sam Midgley',
+  imageAlt: '@shadcn',
+  handle: '@smidge',
+  bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eaque sit corporis perferendis a ducimus aliquam.',
+  isFollowing: true,
 }
+
 export interface IComment {
   id: number
   profile: IProfile

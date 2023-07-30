@@ -1,34 +1,19 @@
-import { PostCard } from './post-card/PostCard'
+import { IPostCard, IProfile } from '@types'
 import { subDays } from 'date-fns'
-import { Timeline } from './Timeline'
-
-export interface IProfile {
-  imageUrl: string
-  imageAlt: string
-  fallback: string
-  name: string
-}
-
-export interface IPostCard {
-  id: number
-  profile: IProfile
-  datePosted: Date
-  imageUrl: string
-  imageAlt: string
-  message: string
-  location: string
-  numLikes: number
-  numComments: number
-}
 
 const profile: IProfile = {
+  profileId: 1,
+  firstName: 'Sam',
+  lastName: 'Midgley',
+  initials: 'SM',
   imageUrl: 'https://github.com/shadcn.png',
-  imageAlt: '',
-  fallback: 'SM',
-  name: 'Sam Midgley',
+  imageAlt: '@shadcn',
+  handle: '@smidge',
+  bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eaque sit corporis perferendis a ducimus aliquam.',
+  isFollowing: true,
 }
 
-const posts: IPostCard[] = [
+export const mock_posts: IPostCard[] = [
   {
     id: 1,
     profile: profile,
@@ -55,16 +40,3 @@ const posts: IPostCard[] = [
     numComments: 8,
   },
 ]
-
-export const Posts = () => {
-  return (
-    <div className="flex justify-between gap-10">
-      <div>
-        {posts.map((p) => (
-          <PostCard key={p.id} {...p} />
-        ))}
-      </div>
-      <Timeline />
-    </div>
-  )
-}

@@ -4,7 +4,7 @@ import { MessageSquareIcon, ThumbsUpIcon } from 'lucide-react'
 
 export const MediaCard = ({ label, imageUrl, alt, info }: IMediaCard) => {
   return (
-    <div className="w-[300px]">
+    <div className="w-[500px]">
       <AspectRatio ratio={3 / 2}>
         <img src={imageUrl} alt={alt} className="object-cover h-full w-full rounded-md" />
       </AspectRatio>
