@@ -3,7 +3,7 @@ import { AppearanceForm } from './AppearanceForm'
 
 export function AppearanceSettings() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-[min(100%,500px)] ">
       <div>
         <h3 className="text-lg font-medium">Appearance</h3>
         <p className="text-sm text-muted-foreground">

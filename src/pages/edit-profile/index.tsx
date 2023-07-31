@@ -19,8 +19,8 @@ export const EditProfile = () => {
   }
 
   return (
-    <main className="mx-8 mb-8">
-      <h1 className="text-4xl tracking-tight font-bold my-4">Settings</h1>
+    <main className="mx-[5%] lg:mx-[10%] mb-8">
+      <h1 className="text-4xl tracking-tight font-bold my-8">Settings</h1>
       <Tabs.Root defaultValue="Profile" onValueChange={dab}>
         <Tabs.List className="mb-4">
           {tabs.map((t) => (
